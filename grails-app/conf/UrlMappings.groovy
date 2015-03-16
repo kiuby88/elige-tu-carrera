@@ -7,7 +7,9 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
+        "/api/calculate/"(controller: "Selector", action: "calculate")
+
+        "/"("/index.html")
         "500"(view:'/error')
 	}
 }
