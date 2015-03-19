@@ -150,11 +150,6 @@
 			<state id="NO" />
 			<probabilities>0.5 0.5</probabilities>
 		</cpt>
-		<cpt id="Ejercicio" diagtype="observation" ranked="true">
-			<state id="SI" />
-			<state id="NO" />
-			<probabilities>0.5 0.5</probabilities>
-		</cpt>
 		<cpt id="Liderazgo" diagtype="observation" ranked="true">
 			<state id="SI" />
 			<state id="NO" />
@@ -203,9 +198,9 @@
 		<noisymax id="Atletico">
 			<state id="SI" />
 			<state id="NO" />
-			<parents>Ejercicio Don_de_gentes</parents>
+			<parents>Don_de_gentes Deportes</parents>
 			<strengths>0 1 0 1</strengths>
-			<parameters>0.9 0.09999999999999998 0 1 0.15 0.85 0 1 0.05000000000000004 0.95</parameters>
+			<parameters>0.15 0.85 0 1 0.15 0.85 0 1 0.05000000000000004 0.95</parameters>
 		</noisymax>
 		<noisymax id="Organizador">
 			<state id="SI" />
@@ -497,15 +492,7 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>600 593 682 644</position>
-				<barchart active="true" width="128" height="64" />
-			</node>
-			<node id="Ejercicio">
-				<name>Ejercicio</name>
-				<interior color="e5f6f7" />
-				<outline color="000080" />
-				<font color="000000" name="Arial" size="8" />
-				<position>720 537 776 572</position>
+				<position>709 544 791 595</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="Lenguajes">

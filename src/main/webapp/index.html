@@ -99,36 +99,35 @@
                                         <div class="col-lg-11">
                                             <div class="checkbox">
                                                 <p>Humanidades y letras</p>
-                                                <label><input type="checkbox">&nbsp;Historia&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Redacción&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Idiomas&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Lectura&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Pólítica&nbsp;</label>
+                                                <label><input type="checkbox" name="Historia">&nbsp;Historia&nbsp;</label>
+                                                <label><input type="checkbox" name="Creatividad">&nbsp;Redacción&nbsp;</label>
+                                                <label><input type="checkbox" name="Languajes">&nbsp;Idiomas&nbsp;</label>
+                                                <label><input type="checkbox" name="Lectura">&nbsp;Lectura&nbsp;</label>
+                                                <label><input type="checkbox" name="Redaccion">&nbsp;Lectura&nbsp;</label>
+                                                <label><input type="checkbox" name="Politica">&nbsp;Pólítica&nbsp;</label>
                                                 <p><br>Arte y trabajos manuales&nbsp;</p>
-                                                <label><input type="checkbox">&nbsp;Manualidades&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Música&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Bricolaje&nbsp;</label>
+                                                <label><input type="checkbox" name="Manualidades">&nbsp;Manualidades&nbsp;</label>
+                                                <label><input type="checkbox" name="Musica">&nbsp;Música&nbsp;</label>
+                                                <label><input type="checkbox" name="Bricolaje"  >&nbsp;Bricolaje&nbsp;</label>
                                                 <p><br>Ciencia y análisis</p>
-                                                <label><input type="checkbox">&nbsp;Cálculo&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Economía&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Ciencia&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Tecnología&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Biología&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Puzzles&nbsp;</label>
+                                                <label><input type="checkbox" name="Calculo">&nbsp;Cálculo&nbsp;</label>
+                                                <label><input type="checkbox" name="Inicio">&nbsp;Economía&nbsp;</label>
+                                                <label><input type="checkbox" name="Ciencia">&nbsp;Ciencia&nbsp;</label>
+                                                <label><input type="checkbox" name="Tecnologia">&nbsp;Tecnología&nbsp;</label>
+                                                <label><input type="checkbox" name="Biologia">&nbsp;Biología&nbsp;</label>
+                                                <label><input type="checkbox" name="Puzzles">&nbsp;Puzzles&nbsp;</label>
                                                 <p><br>Actividades durante el tiempo libre&nbsp;</p>
-                                                <label><input type="checkbox">&nbsp;Videojuegos&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Deportista&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Cine&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Gastronomía&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Viajes&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Animales&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Internet&nbsp;</label>
+                                                <label><input type="checkbox" name="Videojuegos">&nbsp;Videojuegos&nbsp;</label>
+                                                <label><input type="checkbox" name="Deportes">&nbsp;Deportista&nbsp;</label>
+                                                <label><input type="checkbox" name="Peliculas">&nbsp;Cine&nbsp;</label>
+                                                <label><input type="checkbox" name="Gastronomia">&nbsp;Gastronomía&nbsp;</label>
+                                                <label><input type="checkbox" name="Viajar">&nbsp;Viajes&nbsp;</label>
+                                                <label><input type="checkbox" name="Animales">&nbsp;Animales&nbsp;</label>
+                                                <label><input type="checkbox" name="Internet">&nbsp;Internet&nbsp;</label>
                                                 <p><br>Cualidades personales</p>
-                                                <label><input type="checkbox">&nbsp;Creativo/a&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Liderazgo&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Don de gentes&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Ambicioso/a&nbsp;</label>
-                                                <label><input type="checkbox">&nbsp;Capacidad de sacrificio&nbsp;</label>
+                                                <label><input type="checkbox" name="Creatividad">&nbsp;Creativo/a&nbsp;</label>
+                                                <label><input type="checkbox" name="Liderazgo">&nbsp;Liderazgo&nbsp;</label>
+                                                <label><input type="checkbox" name="Don_de_gentes">&nbsp;Don de gentes&nbsp;</label>
                                             </div>
                                         </div>
                                     </div>
@@ -137,41 +136,68 @@
                                     <div class="form-group">
                                         <h3>Estudios previos</h3>
                                         <div class="col-lg-10">
-                                            <select class="form-control" style="background-image: linear-gradient(#2196f3,#2196f3),linear-gradient(#d2d2d2,#d2d2d2);" id="select-estudios-previos">
-                                                <option>Bachiller</option>
-                                                <option>Formación personal</option>
+                                            <select class="form-control" style="background-image: linear-gradient(#2196f3,#2196f3),linear-gradient(#d2d2d2,#d2d2d2);" id="select-estudios-previos" name="Estudios_previos">
+                                                <option value="Bach_humanidades">Bachiller de Humanidades</option>
+                                                <option value="Bach_tecnologico">Bachiller Tecnológico</option>
+                                                <option value="Bach_artes">Bachiller de Artes</option>
+                                                <option value="Bach_salud">Bachiller de Salud</option>
+                                                <option value="Bach_sociales">Bachiller de Sociales</option>
+                                                <option value="Ciclo_superior">Ciclo Superior</option>
                                             </select>
                                         </div>
                                     </div>
+
 
                                     <div class="form-group">
                                         <h3>Nota media</h3>
                                         <div class="col-lg-10">
-                                            <div class="slider shor slider-material-blue" id="slider-puntuacion-media"></div>
-                                            <small>Puntuación media:&nbsp;</small><span class="small" id="slider-puntuacion-media-value"></span>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <h3>Trabajo y salario</h3>
-                                        <div class="col-lg-10">
-                                            <select class="form-control" style="background-image: linear-gradient(#2196f3,#2196f3),linear-gradient(#d2d2d2,#d2d2d2);" id="select-trabajo-y-salario">
-                                                <option>Desempleado</option>
-                                                <option>Menos de 10000€ al año</option>
-                                                <option>Entre 10001€ y 20000€</option>
-                                                <option>Entre 20001€ y 30000€</option>
-                                                <option>Entre 30001€ y 40000€</option>
-                                                <option>Más de 40001€</option>
+                                            <select class="form-control" style="background-image: linear-gradient(#2196f3,#2196f3),linear-gradient(#d2d2d2,#d2d2d2);" id="select-puntuacion-media" name="Nota_media_expediente">
+                                                <option value="Aprobado">Aprobado</option>
+                                                <option value="Notable">Notable</option>
+                                                <option value="Sobresaliente">Sobresaliente</option>
+                                                <option value="Matricula">Matrícula</option>
                                             </select>
                                         </div>
                                     </div>
 
+
                                     <div class="form-group">
-                                        <h3>Edad</h3>
+                                        <h3>Salario</h3>
                                         <div class="col-lg-10">
-                                            <div class="slider shor slider-material-blue" id="slider-edad"></div>
-                                            <small>Años:&nbsp;</small><span class="small" id="slider-edad-value"></span>
+                                            <select class="form-control" style="background-image: linear-gradient(#2196f3,#2196f3),linear-gradient(#d2d2d2,#d2d2d2);" id="select-trabajo-y-salario" name="Salario">
+                                                <option value="Bajo">Bajo</option>
+                                                <option value="Medio">Medio</option>
+                                                <option value="Alto">Alto</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <h3>Necesidad de tiempo libre</h3>
+                                        <div class="col-lg-10">
+                                            <select class="form-control" style="background-image: linear-gradient(#2196f3,#2196f3),linear-gradient(#d2d2d2,#d2d2d2);" id="select-tiempo-libre" name="Tiempo_libre">
+                                                <option value="Bajo">Baja</option>
+                                                <option value="Medio">Media</option>
+                                                <option value="Alto">Alta</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <h3>Capacidad de esfuerzo</h3>
+                                        <div class="col-lg-10">
+                                            <select class="form-control" style="background-image: linear-gradient(#2196f3,#2196f3),linear-gradient(#d2d2d2,#d2d2d2);" id="select-dificultad" name="Dificultad">
+                                                <option value="Alto">Baja</option>
+                                                <option value="Medio">Media</option>
+                                                <option value="Bajo">Alta</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <h3>Organización del Trabajo</h3>
+                                        <div class="col-lg-10">
+                                            <select class="form-control" style="background-image: linear-gradient(#2196f3,#2196f3),linear-gradient(#d2d2d2,#d2d2d2);" id="select-tipo-trabajo" name="Organizacion_del_trabajo">
+                                                <option value="Trabajo_individual">Trabajo individual</option>
+                                                <option value="Trabajo_en_grupo">Trabajo en grupo</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -270,6 +296,16 @@
 
 
     function obtainResults(){
+
+        var values = $('#form').serialize();
+
+        // Replace checkbox status with SI
+        vaules = values.split("on").join("SI");
+
+        $.get("career?"+values, function(result){
+
+        })
+
         flipModal();
     }
 
