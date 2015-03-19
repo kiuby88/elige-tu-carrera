@@ -52,6 +52,11 @@
             <artifactId>resteasy-guice</artifactId>
             <version>3.0.7.Final</version>
         </dependency>
+        <dependency>
+            <groupId>dslpitt</groupId>
+            <artifactId>jsmile</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>elige-tu-carrera</finalName>
