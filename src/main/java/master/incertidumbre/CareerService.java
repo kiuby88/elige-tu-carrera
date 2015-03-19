@@ -18,6 +18,7 @@ public class CareerService {
             "Historia", "Creatividad", "Calculo", "Redaccion", "Manualidades", "Lenguajes", "Liderazgo",
             "Don_de_gentes",
             "Musica", "Deportes", "Videojuegos", "Lectura", "Gastronomia", "Peliculas", "Viajar", "Bricolaje", "Politica", "Economia", "Animales", "Ciencia", "Biologia", "Tecnologia", "Puzzles", "Internet"};
+
     private CareerService(){
         net = new Network();
 
@@ -50,10 +51,10 @@ public class CareerService {
     public List<Career> getRanking(){
 
         // Setting NO for default evidences
-        //setDefaultEvidences();
+        setDefaultEvidences();
 
         net.updateBeliefs();
-        List<Career> targetNodes = new ArrayList<Career>();
+        List<Career> targetNodes = new ArrayList<>();
         for(int i=0;i<nodes.length;i++){
             if(net.getChildren(nodes[i]).length==0){
                 targetNodes.add(new Career(net.getNodeName(nodes[i]),net.getNodeValue(nodes[i])[0]));
@@ -73,9 +74,9 @@ public class CareerService {
     }
 
     private String getNodeIdFromName(String name){
-        for(int i=0;i<nodes.length;i++){
-            if(net.getNodeName(nodes[i]).equals(name)){
-                return nodes[i];
+        for (String node : nodes) {
+            if (net.getNodeName(node).equals(name)) {
+                return node;
             }
         }
         return null;
