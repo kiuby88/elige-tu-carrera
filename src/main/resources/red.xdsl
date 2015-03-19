@@ -25,7 +25,7 @@
 		</noisymax>
 		<cpt id="Musica" diagtype="observation" ranked="true">
 			<state id="SI" />
-			<state id="NO" />
+			<state id="NO" default="true" />
 			<probabilities>0.5 0.5</probabilities>
 		</cpt>
 		<cpt id="Lectura" diagtype="observation" ranked="true">
@@ -60,7 +60,7 @@
 			<state id="NO" />
 			<probabilities>0.5 0.5</probabilities>
 		</cpt>
-		<cpt id="gusto_biologia" diagtype="observation" ranked="true">
+		<cpt id="Biologia" diagtype="observation" ranked="true">
 			<state id="SI" />
 			<state id="NO" />
 			<probabilities>0.5 0.5</probabilities>
@@ -68,7 +68,7 @@
 		<noisymax id="Medioambiental">
 			<state id="SI" />
 			<state id="NO" />
-			<parents>Animales gusto_biologia</parents>
+			<parents>Animales Biologia</parents>
 			<strengths>0 1 0 1</strengths>
 			<parameters>0.75 0.25 0 1 0.9 0.09999999999999998 0 1 0.05000000000000004 0.95</parameters>
 		</noisymax>
@@ -85,9 +85,9 @@
 			<probabilities>0.3333333333333333 0.33333333 0.33333333</probabilities>
 		</cpt>
 		<cpt id="Dificultad" diagtype="observation" ranked="true">
-			<state id="Baja" />
-			<state id="Media" />
-			<state id="Alta" />
+			<state id="Bajo" />
+			<state id="Medio" />
+			<state id="Alto" />
 			<probabilities>0.3333333333333333 0.33333333 0.33333333</probabilities>
 		</cpt>
 		<cpt id="Organizacion_del_trabajo" diagtype="observation" ranked="true">
@@ -195,13 +195,6 @@
 			<state id="NO" />
 			<probabilities>0.5 0.5</probabilities>
 		</cpt>
-		<noisymax id="Atletico">
-			<state id="SI" />
-			<state id="NO" />
-			<parents>Don_de_gentes Deportes</parents>
-			<strengths>0 1 0 1</strengths>
-			<parameters>0.15 0.85 0 1 0.15 0.85 0 1 0.05000000000000004 0.95</parameters>
-		</noisymax>
 		<noisymax id="Organizador">
 			<state id="SI" />
 			<state id="NO" />
@@ -226,9 +219,9 @@
 		<noisymax id="Medicina" diagtype="target" ranked="true">
 			<state id="SI" fault="true" />
 			<state id="NO" />
-			<parents>Atletico Organizador Deportista Social Medioambiental Perfil_academico Perfil_profesional</parents>
-			<strengths>0 1 0 1 0 1 0 1 0 1 0 1 2 3 0 1</strengths>
-			<parameters>0.2 0.8 0 1 0.2 0.8 0 1 0.25 0.75 0 1 0.2 0.8 0 1 0.35 0.65 0 1 0 1 0.05000000000000004 0.95 0.2 0.8 0 1 0.02500000000000002 0.975 0 1 0.05000000000000004 0.95</parameters>
+			<parents>Organizador Deportista Social Medioambiental Perfil_academico Perfil_profesional</parents>
+			<strengths>0 1 0 1 0 1 0 1 0 1 2 3 0 1</strengths>
+			<parameters>0.2 0.8 0 1 0.25 0.75 0 1 0.2 0.8 0 1 0.35 0.65 0 1 0 1 0.05000000000000004 0.95 0.2 0.8 0 1 0.02500000000000002 0.975 0 1 0.05000000000000004 0.95</parameters>
 		</noisymax>
 		<noisymax id="Constructor">
 			<state id="SI" />
@@ -345,9 +338,9 @@
 		<noisymax id="Enfermeria" diagtype="target" ranked="true">
 			<state id="SI" fault="true" />
 			<state id="NO" />
-			<parents>Atletico Organizador Social Deportista Medioambiental Perfil_academico Perfil_profesional</parents>
-			<strengths>0 1 0 1 0 1 0 1 0 1 0 1 2 3 0 1</strengths>
-			<parameters>0.15 0.85 0 1 0.25 0.75 0 1 0.2 0.8 0 1 0.2 0.8 0 1 0.35 0.65 0 1 0 1 0.09999999999999998 0.9 0.15 0.85 0 1 0.07499999999999996 0.925 0 1 0.05000000000000004 0.95</parameters>
+			<parents>Organizador Social Deportista Medioambiental Perfil_academico Perfil_profesional</parents>
+			<strengths>0 1 0 1 0 1 0 1 0 1 2 3 0 1</strengths>
+			<parameters>0.25 0.75 0 1 0.2 0.8 0 1 0.2 0.8 0 1 0.35 0.65 0 1 0 1 0.09999999999999998 0.9 0.15 0.85 0 1 0.07499999999999996 0.925 0 1 0.05000000000000004 0.95</parameters>
 		</noisymax>
 		<noisymax id="Econom_a_2" diagtype="target" ranked="true">
 			<state id="SI" fault="true" />
@@ -387,9 +380,9 @@
 		<noisymax id="Medioambientales" diagtype="target" ranked="true">
 			<state id="SI" fault="true" />
 			<state id="NO" />
-			<parents>Atletico Perfil_academico Perfil_profesional Medioambiental</parents>
-			<strengths>0 1 0 1 2 3 0 1 0 1</strengths>
-			<parameters>0.35 0.65 0 1 0.09999999999999998 0.9 0.15 0.85 0.2 0.8 0 1 0.2 0.8 0 1 0.55 0.45 0 1 0.05000000000000004 0.95</parameters>
+			<parents>Perfil_academico Perfil_profesional Medioambiental</parents>
+			<strengths>0 1 2 3 0 1 0 1</strengths>
+			<parameters>0.09999999999999998 0.9 0.15 0.85 0.2 0.8 0 1 0.2 0.8 0 1 0.55 0.45 0 1 0.05000000000000004 0.95</parameters>
 		</noisymax>
 		<noisymax id="Periodismo" diagtype="target" ranked="true">
 			<state id="SI" fault="true" />
@@ -424,7 +417,7 @@
 				<barchart active="true" width="128" height="90" />
 			</node>
 			<node id="Perfil_academico">
-				<name>Perfil académico</name>
+				<name>Perfil acad�mico</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
@@ -464,7 +457,7 @@
 				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="Calculo">
-				<name>Cálculo</name>
+				<name>C�lculo</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
@@ -472,7 +465,7 @@
 				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="Redaccion">
-				<name>Redacción</name>
+				<name>Redacci�n</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
@@ -492,7 +485,7 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>709 544 791 595</position>
+				<position>600 593 682 644</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="Lenguajes">
@@ -512,7 +505,7 @@
 				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="Musica">
-				<name>Música</name>
+				<name>M�sica</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
@@ -524,7 +517,7 @@
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
-				<position>1876 615 1935 651</position>
+				<position>1869 635 1928 671</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="Lectura">
@@ -544,7 +537,7 @@
 				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="Peliculas">
-				<name>Películas</name>
+				<name>Pel�culas</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
@@ -552,7 +545,7 @@
 				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="Gastronomia">
-				<name>Gastronomía</name>
+				<name>Gastronom�a</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
@@ -576,7 +569,7 @@
 				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="Politica">
-				<name>Política</name>
+				<name>Pol�tica</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
@@ -584,7 +577,7 @@
 				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="Economia">
-				<name>Economía</name>
+				<name>Econom�a</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
@@ -608,15 +601,15 @@
 				<barchart active="true" width="128" height="64" />
 			</node>
 			<node id="Tecnologia">
-				<name>Tecnología</name>
+				<name>Tecnolog�a</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
 				<position>2718 636 2784 677</position>
 				<barchart active="true" width="128" height="64" />
 			</node>
-			<node id="gusto_biologia">
-				<name>Biología</name>
+			<node id="Biologia">
+				<name>Biolog�a</name>
 				<interior color="e5f6f7" />
 				<outline color="000080" />
 				<font color="000000" name="Arial" size="8" />
@@ -840,14 +833,6 @@
 				<font color="000000" name="Arial" size="12" align="center" />
 				<position>1227 393 1367 429</position>
 			</textbox>
-			<node id="Atletico">
-				<name>Atletico</name>
-				<interior color="e5f6f7" />
-				<outline color="000080" />
-				<font color="000000" name="Arial" size="8" />
-				<position>713 319 790 361</position>
-				<barchart active="true" width="128" height="64" />
-			</node>
 			<node id="Comprometido">
 				<name>Comprometido</name>
 				<interior color="e5f6f7" />

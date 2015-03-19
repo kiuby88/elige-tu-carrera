@@ -219,21 +219,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-lg-10 col-lg-offset-1">
-                        <table class="table table-condensed">
-                            <thead>
-                                <td>#</td>
-                                <td>Carrera</td>
-                                <td>Probabilidad</td>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Ciencias</td>
-                                    <td>99%</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="col-lg-10 col-lg-offset-1" id="result-modal-table-container">
+
                         </div>
                     </div>
                 </div>
@@ -300,10 +287,27 @@
         var values = $('#form').serialize();
 
         // Replace checkbox status with SI
-        vaules = values.split("on").join("SI");
-
+        values = values.split("on").join("SI");
+        console.log(values);
         $.get("career?"+values, function(result){
 
+            var tableHTML = "<table class=\"table table-condensed\">"
+            tableHTML += "<thead><tr><td>#</td><td>Carrera</td><td>Probabilidad</td></tr></thead>";
+            tableHTML += "<tbody>";
+
+            $.each(result, function(index, career){
+                if(index == 0){
+                    tableHTML += "<tr class=\"success\">";
+                } else {
+                    tableHTML += "<tr>";
+                }
+                tableHTML += "<td>" + (index+1) + " </td><td>" + career.profession + "</td><td>"+ career.probability + "</td></tr>"
+            });
+
+            tableHTML += "</tbody>";
+            tableHTML += "</table>";
+
+            $("#result-modal-table-container").html(tableHTML);
         })
 
         flipModal();

@@ -20,9 +20,12 @@ public class CareerResource {
 
         MultivaluedMap<String, String> queryParams = uriInfo.getQueryParameters();
 
+        service.clearAllEvidences();
         for (String key : queryParams.keySet()){
             String rawValue = queryParams.get(key).get(0);
-            service.setEvidence(key, rawValue);
+            if (service.isValidKey(key)) {
+                service.setEvidenceFromId(key, rawValue);
+            }
         }
 
         return service.getRanking();

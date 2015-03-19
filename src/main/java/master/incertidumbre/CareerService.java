@@ -3,12 +3,9 @@ package master.incertidumbre;
 import org.apache.commons.io.IOUtils;
 import smile.Network;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.StringWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -17,6 +14,10 @@ public class CareerService {
     private String[] nodes;
     private static CareerService instance;
 
+    private static final String[] BOOLEAN_INPUT_KEYS = new String[]{
+            "Historia", "Creatividad", "Calculo", "Redaccion", "Manualidades", "Lenguajes", "Liderazgo",
+            "Don_de_gentes",
+            "Musica", "Deportes", "Videojuegos", "Lectura", "Gastronomia", "Peliculas", "Viajar", "Bricolaje", "Politica", "Economia", "Animales", "Ciencia", "Biologia", "Tecnologia", "Puzzles", "Internet"};
     private CareerService(){
         net = new Network();
 
@@ -36,13 +37,21 @@ public class CareerService {
         }
         return instance;
     }
-    
-    public synchronized void setEvidence(String nodename, String state){
-        String nodeId = getNodeIdFromName(nodename);
+
+    public synchronized void setEvidenceFromId(String nodeId, String state){
         net.setEvidence(nodeId, state);
+    }
+
+    public synchronized void setEvidenceFromName(String nodename, String state){
+        String nodeId = getNodeIdFromName(nodename);
+        setEvidenceFromId(nodeId, state);
     }
     
     public List<Career> getRanking(){
+
+        // Setting NO for default evidences
+        //setDefaultEvidences();
+
         net.updateBeliefs();
         List<Career> targetNodes = new ArrayList<Career>();
         for(int i=0;i<nodes.length;i++){
@@ -53,7 +62,16 @@ public class CareerService {
         Collections.sort(targetNodes);
         return targetNodes;
     }
-    
+
+    private void setDefaultEvidences() {
+        for (String key: BOOLEAN_INPUT_KEYS) {
+            int nodeId = net.getNode(key);
+            if (!net.isEvidence(nodeId)) {
+                net.setEvidence(nodeId, "NO");
+            }
+        }
+    }
+
     private String getNodeIdFromName(String name){
         for(int i=0;i<nodes.length;i++){
             if(net.getNodeName(nodes[i]).equals(name)){
@@ -61,5 +79,13 @@ public class CareerService {
             }
         }
         return null;
+    }
+
+    public boolean isValidKey(String key){
+        return Arrays.asList(nodes).contains(key);
+    }
+
+    public void clearAllEvidences(){
+        net.clearAllEvidence();
     }
 }
